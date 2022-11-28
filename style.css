@@ -14,7 +14,8 @@ header {
 
 header h1 {
     margin-top: 0rem;
-    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-size: 6rem;
 }
 
 h2, h3 {
@@ -24,63 +25,152 @@ h2, h3 {
 .left {
     width: 30%;
     display: inline-block;
-    float: left;
     margin-left: 0rem;
 }
 
 .left button {
     width: 100px;
     height: 50px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    font-family: 'Dosis';
+    font-weight: bold;
+    border-radius: 25px;
+    background-color: #e63946;
+    color: black;
+    box-shadow: 3px 3px 0 black;
+    border: 0 solid black;
+    transition: 0.3s all;
+    margin-bottom: 1rem;
+    margin-left: 3rem;
+}
+
+.left button:hover {
+    box-shadow: 0 0 0 black;
 }
 
 .right {
     margin-top: 2rem;
     width: 70%;
-    display: inline-block;
     float: right;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 }
 
 .add {
     margin-top: 2rem;
 }
 
-.right {
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-}
-
 .book {
     margin-right: 4rem;
     margin-bottom: 2rem;
     width: 150px;
-    height: 150px;
-    border: 1px black solid;
+    height: 200px;
+    border: 0px black solid;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 30px;
+    box-shadow: 5px 5px 0 #e63946;
+    background-color: #ffe0a3;
 }
 
 .remove {
     display: inline;
-    margin-left: 7.8rem;
-    margin-top: -0.1rem;
+    margin-left: 7rem;
+    margin-top: 0.5rem;
     border-radius: 10px;
     border: 0 solid black;
+    background-color: transparent;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+
+.remove:hover {
+    transform: rotate(90deg);
 }
 
 .book h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 0 auto;
+    margin-bottom: 0.5rem;
+    width: 150px;
+    background-color: transparent;
+}
+
+.book h3 {
+    background-color: transparent;
 }
 
 .book h4 {
     font-size: 0.8rem;
     text-align: left;
     margin-left: 0.5rem;
+    background-color: transparent;
 }
 
 .page-num {
     text-align: right;
     margin-right: 0.5rem;
+}
+
+.add-pages-button {
+    border: 0 solid black;
+    background-color: transparent;
+    font-size: 1.5rem;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: #e63946;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #e63946;
+}
+
+.scale-out-center {
+    animation: scale-out-center 0.5s;
+}
+
+@keyframes scale-out-center {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+
+@media only screen and (min-width: 1700px) {
+    * {
+        font-size: 24px;
+    }
+    .left button {
+        font-size: 1.4rem;
+        width: 150px;
+        height: 60px;
+        margin-top: 1rem;
+    }
+    .book {
+        width: 200px;
+        height: 266px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .left {
+        width: 300px;
+        text-align: center;
+    }
+    .right {
+        margin-top: 2rem;
+        margin-right: 0.5rem;
+    }
+    .left button {
+        margin-left: 0rem;
+    }
 }

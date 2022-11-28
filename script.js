@@ -1,8 +1,9 @@
 const container = document.querySelector('.right');
+const removeButtons = document.querySelectorAll('.remove');
 
 function addBook() {
     const titleAdd = document.getElementById('title-add').value;
-    const readAdd = document.getElementById('read-add').value;
+    let readAdd = document.getElementById('read-add').value;
     const totalAdd = document.getElementById('total-add').value;
 
 
@@ -33,14 +34,39 @@ function addBook() {
 
     const pages = document.createElement('h3');
     book.appendChild(pages);
-    const pagesNumber = readAdd + '/' + totalAdd;
     pages.classList.add('page-num')
-    pages.innerHTML = pagesNumber; 
+    pages.innerHTML = readAdd + '/' + totalAdd; 
+
+    const addPagesButton = document.createElement('button');
+    addPagesButton.classList.add('add-pages-button');
+    book.appendChild(addPagesButton);
+    addPagesButton.innerHTML = '+';
+
+    addPagesButton.addEventListener('click', addPagesRead);
+    xButton.addEventListener('click', removeBook);
+
+        
+    function addPagesRead() {
+        if (readAdd == totalAdd) {
+            alert('how????');
+            removeBook;
+            return;
+        }
+        readAdd++;
+        pages.innerHTML = readAdd + '/' + totalAdd;
+    }
+
 }
 
 const button = document.querySelector('.add');
 button.onclick = addBook;
 
-document.querySelector('.remove').onclick = function (e) {
-    document.querySelector('.book').remove();
+
+function removeBook(e) {
+    e.target.parentElement.classList.add('scale-out-center');
+    setTimeout(function () {
+    e.target.parentElement.remove()}, 500);
 }
+
+
+  
